@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Vidéo Universe — Des pubs vidéo pro avec l'IA, sans caméra ni agence</title>
+<meta name="description" content="Créez des publicités vidéo professionnelles avec l'IA : sans caméra, sans acteur, sans agence. 8 modules, un skill IA exclusif, accès à vie pour 97 €.">
+<meta name="theme-color" content="#06101F">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Vos pubs vidéo pro en quelques minutes — sans caméra, sans acteur, sans agence">
+<meta property="og:description" content="La méthode AI Vidéo Universe : 8 modules + un skill IA exclusif qui écrit, storyboarde et génère vos pubs. 97 € une fois, accès à vie.">
+<meta property="og:image" content="assets/img/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:wght@800;900&display=swap" rel="stylesheet">
+<style>
+:root{--night:#06101F;--navy:#0A1628;--blue:#2563EB;--sky:#60A5FA;--gold:#F59E0B;--text:#F8FAFC;--grey:#94A3B8;--glass:rgba(255,255,255,.05);--line:rgba(148,163,184,.16);--r:22px;
+--display:"Archivo","Arial Black","Helvetica Neue",Arial,sans-serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--night);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
+.skip{position:absolute;left:-999px;top:8px;z-index:200;background:var(--gold);color:#111;padding:10px 16px;border-radius:10px;font-weight:700}
+.skip:focus{left:8px}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:150;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.aurora{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.aurora i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.45;animation:drift 22s ease-in-out infinite alternate}
+.aurora i:nth-child(1){width:60vw;height:60vw;background:radial-gradient(circle,#2563EB 0,transparent 65%);top:-20vw;left:-15vw}
+.aurora i:nth-child(2){width:45vw;height:45vw;background:radial-gradient(circle,#1e3a8a 0,transparent 65%);top:30vh;right:-15vw;animation-delay:-8s}
+.aurora i:nth-child(3){width:35vw;height:35vw;background:radial-gradient(circle,rgba(245,158,11,.5) 0,transparent 65%);bottom:-15vw;left:30vw;animation-delay:-14s;opacity:.22}
+@keyframes drift{to{transform:translate3d(6vw,4vh,0) scale(1.15)}}
+#progress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--blue),var(--sky),var(--gold));z-index:120}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(6,16,31,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:900;letter-spacing:.02em;text-transform:uppercase;font-size:1.02rem;white-space:nowrap}
+.logo img{width:34px;height:34px}
+.logo b{color:var(--sky)}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:.92rem;color:var(--grey);font-weight:500}
+.nav ul a:hover{color:var(--text)}
+
+/* BUTTONS */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:14px 26px;border-radius:14px;font-weight:700;font-size:1rem;text-align:center;line-height:1.25;transition:transform .25s,box-shadow .25s;isolation:isolate;overflow:hidden}
+.btn-gold{background:linear-gradient(135deg,#FBBF24,#F59E0B 55%,#D97706);color:#1a1204;box-shadow:0 10px 30px -8px rgba(245,158,11,.6),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn-gold::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-120%);animation:shine 3.8s ease-in-out infinite;z-index:-1}
+@keyframes shine{60%,100%{transform:translateX(120%)}}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 18px 44px -8px rgba(245,158,11,.8),0 0 0 6px rgba(245,158,11,.12)}
+.btn-ghost{border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(10px)}
+.btn-ghost:hover{transform:translateY(-3px);border-color:var(--sky);box-shadow:0 0 30px -6px rgba(96,165,250,.6)}
+.btn-sm{min-height:42px;padding:10px 18px;font-size:.9rem;border-radius:12px}
+.btn-lg{min-height:60px;padding:18px 34px;font-size:1.08rem}
+
+/* TYPO */
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sky);margin-bottom:16px}
+.eyebrow::before{content:"";width:22px;height:2px;background:currentColor;border-radius:2px}
+h1,h2,h3{font-family:var(--display);text-transform:uppercase;font-weight:900;line-height:1.02;letter-spacing:-.01em}
+h1{font-size:clamp(2.3rem,5.4vw,4.6rem)}
+h2{font-size:clamp(1.9rem,4vw,3.3rem);max-width:18ch}
+h3{font-size:1.18rem;line-height:1.15}
+.grad{background:linear-gradient(100deg,#93C5FD,#60A5FA 40%,#2563EB);-webkit-background-clip:text;background-clip:text;color:transparent}
+.gold{color:var(--gold)}
+.lead{font-size:clamp(1.02rem,1.5vw,1.2rem);color:#CBD5E1;max-width:58ch}
+section{padding:clamp(72px,10vw,130px) 0;position:relative}
+.head{margin-bottom:clamp(36px,5vw,60px)}
+.head.center{text-align:center;display:flex;flex-direction:column;align-items:center}
+.head .lead{margin-top:18px}
+
+/* HERO */
+.hero{padding:clamp(28px,5vw,64px) 0 clamp(60px,8vw,100px);overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-1;opacity:.35;mask-image:linear-gradient(180deg,#000 30%,transparent 95%);-webkit-mask-image:linear-gradient(180deg,#000 30%,transparent 95%)}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero .wrap{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(30px,5vw,70px);align-items:center}
+.live{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 12px;border-radius:99px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.35);color:#FCD34D;font-size:.82rem;font-weight:600;margin-bottom:24px}
+.live .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(245,158,11,.7);animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 12px rgba(245,158,11,0)}100%{box-shadow:0 0 0 0 rgba(245,158,11,0)}}
+.hero h1 .line{display:block}
+.hero .lead{margin:24px 0 32px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.reassure{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:22px;list-style:none;color:var(--grey);font-size:.9rem}
+.reassure li{display:flex;align-items:center;gap:7px}
+.reassure svg{width:16px;height:16px;color:#34D399;flex:none}
+.stage{position:relative;justify-self:center;width:min(340px,100%);perspective:1200px}
+.phone{position:relative;aspect-ratio:9/16;border-radius:34px;padding:10px;background:linear-gradient(160deg,#1e293b,#0b1220);box-shadow:0 40px 90px -20px rgba(37,99,235,.55),0 0 0 1px rgba(148,163,184,.2),inset 0 0 0 1px rgba(255,255,255,.06);transform:rotateY(-8deg) rotateX(4deg);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.stage:hover .phone{transform:rotateY(0) rotateX(0)}
+.phone .vid{border-radius:26px;height:100%}
+.chip{position:absolute;z-index:3;display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:14px;background:rgba(10,22,40,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);font-size:.8rem;font-weight:600;box-shadow:0 14px 34px -10px rgba(0,0,0,.6);animation:float 6s ease-in-out infinite;white-space:nowrap}
+.chip small{display:block;color:var(--grey);font-weight:500;font-size:.72rem}
+.chip .ic{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:.95rem;flex:none}
+.chip.c1{top:12%;left:-22%}.chip.c1 .ic{background:rgba(37,99,235,.25)}
+.chip.c2{bottom:16%;right:-20%;animation-delay:-3s}.chip.c2 .ic{background:rgba(245,158,11,.22)}
+@keyframes float{50%{transform:translateY(-12px)}}
+.halo{position:absolute;inset:-18%;z-index:-1;background:radial-gradient(circle at 50% 45%,rgba(37,99,235,.55),transparent 62%);filter:blur(20px)}
+
+/* VIDEO */
+.vid{position:relative;overflow:hidden;background:#000;aspect-ratio:9/16}
+.vid iframe{position:absolute;top:50%;left:50%;width:100%;height:100%;transform:translate(-50%,-50%) scale(1.02);border:0;pointer-events:none}
+.vid .poster{position:absolute;inset:0;z-index:1;transition:opacity .6s}
+.vid .poster img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) brightness(.8)}
+.vid.ready .poster{opacity:0;pointer-events:none}
+.vid .play{position:absolute;inset:0;margin:auto;width:74px;height:74px;border-radius:50%;display:grid;place-items:center;background:rgba(245,158,11,.92);color:#1a1204;box-shadow:0 0 0 10px rgba(245,158,11,.2),0 16px 40px rgba(0,0,0,.5);transition:transform .25s}
+.vid .play:hover{transform:scale(1.08)}
+.vid .play svg{width:28px;height:28px;margin-left:4px}
+.sound{position:absolute;z-index:2;left:50%;bottom:16px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:99px;background:rgba(6,16,31,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);font-size:.82rem;font-weight:600;white-space:nowrap;min-height:44px;transition:background .25s,border-color .25s}
+.sound:hover{border-color:var(--sky)}
+.sound[aria-pressed="true"]{background:rgba(37,99,235,.85);border-color:var(--sky)}
+.sound svg{width:16px;height:16px}
+
+/* STATS */
+.stats{padding:0;margin-top:-10px}
+.stats .grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);overflow:hidden}
+.stat{padding:30px 18px;text-align:center;position:relative}
+.stat+.stat::before{content:"";position:absolute;left:0;top:22%;height:56%;width:1px;background:var(--line)}
+.stat strong{display:block;font-family:var(--display);font-size:clamp(2rem,4vw,3rem);line-height:1;background:linear-gradient(180deg,#fff,#93C5FD);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{display:block;margin-top:8px;color:var(--grey);font-size:.9rem}
+
+/* CARDS */
+.cards{display:grid;gap:20px}
+.cards.c4{grid-template-columns:repeat(4,1fr)}
+.card{position:relative;padding:30px 26px;border-radius:var(--r);background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--line);transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .35s;transform-style:preserve-3d}
+.card:hover{transform:translateY(-8px);border-color:rgba(96,165,250,.45);box-shadow:0 26px 60px -24px rgba(37,99,235,.55)}
+.card .num{font-family:var(--display);font-size:.85rem;color:var(--grey);letter-spacing:.1em}
+.card .ico{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:1.4rem;margin:18px 0 18px;background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3)}
+.card p{color:#B6C2D2;margin-top:10px;font-size:.96rem}
+.card.pb h3 .x{color:#F87171}
+.agit{margin-top:36px;padding:26px 30px;border-radius:var(--r);border:1px dashed rgba(245,158,11,.4);background:rgba(245,158,11,.06);font-size:clamp(1.02rem,1.6vw,1.2rem);display:flex;gap:16px;align-items:center}
+.agit b{color:#FCD34D}
+
+/* BRAIN */
+.brain .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(30px,5vw,70px);align-items:center}
+.pipeline{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:30px;counter-reset:s}
+.pipeline li{display:flex;align-items:center;gap:14px;padding:13px 16px;border-radius:14px;background:var(--glass);border:1px solid var(--line);font-weight:600;font-size:.95rem;position:relative;counter-increment:s}
+.pipeline li::before{content:counter(s,decimal-leading-zero);font-family:var(--display);font-size:.8rem;color:var(--sky);width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:rgba(37,99,235,.18);flex:none}
+.pipeline li::after{content:"";position:absolute;left:33px;bottom:-11px;width:2px;height:10px;background:linear-gradient(var(--sky),transparent)}
+.pipeline li:last-child::after{display:none}
+.pipeline li .t{margin-left:auto;font-size:.72rem;color:#34D399;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.benef{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.benef .card .ico{background:rgba(37,99,235,.16);border-color:rgba(96,165,250,.35);margin-top:0}
+.brain-core{position:relative;border-radius:28px;padding:clamp(22px,3vw,34px);background:radial-gradient(circle at 30% 0,rgba(37,99,235,.35),transparent 60%),linear-gradient(180deg,#0d1d36,#0A1628);border:1px solid rgba(96,165,250,.3);box-shadow:0 40px 100px -40px rgba(37,99,235,.7)}
+.brain-core .tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#1a1204;background:var(--gold);padding:5px 10px;border-radius:8px;margin-bottom:14px}
+
+/* PROOF */
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.vcard{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--navy);transition:transform .35s,box-shadow .35s}
+.vcard:hover{transform:translateY(-8px);box-shadow:0 30px 60px -25px rgba(37,99,235,.6)}
+.vcard .cap{padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.vcard .cap b{font-family:var(--display);text-transform:uppercase;font-size:.98rem}
+.vcard .cap span{font-size:.78rem;color:var(--grey);white-space:nowrap}
+
+/* MARQUEE */
+.marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);padding:14px 0}
+.track{display:flex;gap:18px;width:max-content;animation:scroll 70s linear infinite}
+.marquee:hover .track,.marquee:focus-within .track{animation-play-state:paused}
+@keyframes scroll{to{transform:translate3d(calc(-50% - 9px),0,0)}}
+.shot{position:relative;flex:none;width:clamp(190px,22vw,260px);aspect-ratio:3/4;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#0d1b30;transition:transform .35s,box-shadow .35s}
+.shot:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 24px 50px -20px rgba(37,99,235,.7)}
+.shot img{width:100%;height:100%;object-fit:cover}
+.shot figcaption{position:absolute;left:10px;bottom:10px;padding:5px 10px;border-radius:8px;font-size:.72rem;font-weight:700;letter-spacing:.04em;background:rgba(6,16,31,.75);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.gal-note{text-align:center;color:var(--grey);font-size:.88rem;margin-top:18px}
+.lightbox{position:fixed;inset:0;z-index:160;display:none;align-items:center;justify-content:center;background:rgba(3,8,18,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:20px}
+.lightbox.open{display:flex;animation:fade .3s}
+@keyframes fade{from{opacity:0}}
+.lightbox figure{max-width:min(560px,100%);max-height:100%;display:flex;flex-direction:column;align-items:center;gap:12px}
+.lightbox img{max-height:78vh;width:auto;border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lightbox figcaption{color:#CBD5E1;font-weight:600}
+.lb-btn{position:absolute;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid var(--line);font-size:1.4rem;transition:background .2s}
+.lb-btn:hover{background:rgba(37,99,235,.6)}
+.lb-close{top:18px;right:18px}.lb-prev{left:18px;top:50%;transform:translateY(-50%)}.lb-next{right:18px;top:50%;transform:translateY(-50%)}
+
+/* ACCORDION */
+.acc{display:flex;flex-direction:column;gap:12px;max-width:880px;margin-inline:auto}
+.acc details{border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid var(--line);transition:border-color .3s,background .3s}
+.acc details[open]{border-color:rgba(96,165,250,.45);background:linear-gradient(180deg,rgba(37,99,235,.12),rgba(255,255,255,.02))}
+.acc summary{list-style:none;display:flex;align-items:center;gap:18px;padding:20px 22px;cursor:pointer;font-weight:700;font-size:1.04rem}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary .n{font-family:var(--display);font-size:1.3rem;color:var(--sky);min-width:40px}
+.acc summary .pm{margin-left:auto;width:32px;height:32px;border-radius:50%;flex:none;border:1px solid var(--line);position:relative;transition:transform .35s,background .3s}
+.acc summary .pm::before,.acc summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:currentColor;transform:translate(-50%,-50%)}
+.acc summary .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .35s}
+.acc details[open] .pm{background:var(--blue);border-color:var(--blue)}
+.acc details[open] .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.acc .body{padding:0 22px 22px 80px;color:#B6C2D2}
+.acc .body b{color:var(--text)}
+
+/* TESTIMONIALS */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tcard{display:flex;flex-direction:column}
+.tcard .stars{color:var(--gold);letter-spacing:3px;font-size:1rem}
+.tcard blockquote{font-size:1.1rem;font-weight:600;line-height:1.5;margin:16px 0 24px;flex:1}
+.tcard blockquote::before{content:"“";display:block;font-family:Georgia,serif;font-size:3.4rem;line-height:.6;color:var(--sky);margin-bottom:8px}
+.who{display:flex;align-items:center;gap:12px}
+.who .av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:linear-gradient(135deg,var(--blue),var(--sky));flex:none}
+.who small{display:block;color:var(--grey)}
+
+/* PRICING */
+.offer .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,60px);align-items:center}
+.anchor{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;margin-top:30px}
+.anchor div{padding:20px;border-radius:18px;border:1px solid var(--line);background:var(--glass);text-align:center}
+.anchor .vs{font-family:var(--display);color:var(--grey)}
+.anchor s{color:#F87171;font-family:var(--display);font-size:1.5rem;text-decoration-thickness:3px}
+.anchor strong{font-family:var(--display);font-size:1.9rem;color:var(--gold)}
+.anchor small{display:block;color:var(--grey);font-size:.82rem;margin-top:4px}
+.price{position:relative;padding:clamp(28px,4vw,44px);border-radius:30px;background:radial-gradient(circle at 50% -10%,rgba(245,158,11,.22),transparent 55%),linear-gradient(180deg,#0f213d,#0A1628);border:1px solid rgba(245,158,11,.45);box-shadow:0 40px 100px -40px rgba(245,158,11,.5),0 0 0 8px rgba(245,158,11,.05)}
+.price::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:conic-gradient(from var(--a,0deg),transparent 0 70%,#FCD34D 80%,transparent 90%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 6s linear infinite;pointer-events:none}
+@property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes spin{to{--a:360deg}}
+.badge{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#FCD34D,#F59E0B);color:#1a1204;font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;padding:8px 18px;border-radius:99px;white-space:nowrap;box-shadow:0 10px 26px -6px rgba(245,158,11,.7)}
+.price h3{text-align:center;font-size:1.3rem;margin-top:8px}
+.amount{text-align:center;margin:14px 0 4px;font-family:var(--display);font-size:clamp(4rem,9vw,5.6rem);line-height:1}
+.amount sup{font-size:.4em;vertical-align:.9em;margin-left:4px;color:var(--gold)}
+.per{text-align:center;color:var(--grey);font-size:.92rem}
+.incl{list-style:none;margin:26px 0;display:flex;flex-direction:column;gap:12px}
+.incl li{display:flex;gap:12px;align-items:flex-start;font-size:.97rem}
+.incl li::before{content:"✓";flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;font-weight:800;background:rgba(52,211,153,.15);color:#34D399;border:1px solid rgba(52,211,153,.4)}
+.incl li.gift::before{content:"★";background:rgba(245,158,11,.15);color:var(--gold);border-color:rgba(245,158,11,.4)}
+.price .btn{width:100%}
+.price .reassure{justify-content:center;margin-top:16px}
+
+/* FINAL */
+.final{text-align:center;overflow:hidden}
+.final .box{position:relative;padding:clamp(48px,7vw,90px) clamp(20px,5vw,60px);border-radius:34px;background:radial-gradient(ellipse at 50% 0,rgba(37,99,235,.55),transparent 65%),linear-gradient(180deg,#0d1d36,#081222);border:1px solid rgba(96,165,250,.3);overflow:hidden}
+.final .box img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.18;z-index:0}
+.final .box>*:not(img){position:relative;z-index:1}
+.final h2{margin-inline:auto;max-width:20ch}
+.final .lead{margin:20px auto 34px}
+.final .reassure{justify-content:center}
+.tg{display:inline-flex;align-items:center;gap:8px;margin-top:26px;color:var(--sky);font-weight:600;font-size:.95rem;border-bottom:1px solid transparent}
+.tg:hover{border-color:var(--sky)}
+
+footer{padding:40px 0 110px;border-top:1px solid var(--line);color:var(--grey);font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer nav{display:flex;gap:20px;flex-wrap:wrap}
+footer a:hover{color:var(--text)}
+
+.mcta{position:fixed;left:12px;right:12px;bottom:12px;z-index:110;display:none;transform:translateY(140%);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.mcta.show{transform:none}
+.mcta .btn{width:100%;box-shadow:0 14px 40px -8px rgba(0,0,0,.8),0 10px 30px -8px rgba(245,158,11,.6)}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media (max-width:1080px){.cards.c4{grid-template-columns:repeat(2,1fr)}.chip.c1{left:-8%}.chip.c2{right:-8%}}
+@media (max-width:860px){
+ .nav ul{display:none}
+ .hero .wrap,.brain .wrap,.offer .wrap{grid-template-columns:1fr}
+ .hero-copy{text-align:center;display:flex;flex-direction:column;align-items:center}
+ .hero .lead{margin-inline:auto}.hero-cta,.reassure{justify-content:center}
+ .stage{width:min(300px,78%);margin-top:10px}
+ .phone{transform:none}
+ .stats .grid{grid-template-columns:repeat(2,1fr)}
+ .stat:nth-child(3)::before{display:none}
+ .stat:nth-child(n+3){border-top:1px solid var(--line)}
+ .vgrid{grid-template-columns:repeat(3,minmax(220px,1fr));overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin-inline:-20px;padding-inline:20px}
+ .vcard{scroll-snap-align:center}
+ .tgrid{grid-template-columns:1fr}
+ .mcta{display:block}
+ .price{max-width:520px;margin-inline:auto;width:100%}
+}
+@media (max-width:640px){
+ .nav .btn-sm{padding:10px 14px;font-size:.84rem}
+ .cards.c4,.benef{grid-template-columns:1fr}
+ .chip{font-size:.72rem;padding:8px 10px}.chip .ic{width:26px;height:26px}
+ .chip.c1{left:-12%}.chip.c2{right:-12%}
+ .acc .body{padding:0 20px 20px 20px}
+ .acc summary{padding:18px;gap:12px;font-size:.98rem}
+ .anchor{grid-template-columns:1fr}.anchor .vs{text-align:center}
+ .agit{flex-direction:column;align-items:flex-start;padding:22px}
+ .lb-prev,.lb-next{top:auto;bottom:18px;transform:none}
+ .btn-lg{padding:16px 22px;font-size:1rem}
+ .hero-cta .btn{width:100%}
+}
+@media (max-width:380px){
+ .wrap{width:calc(100% - 28px)}
+ .logo span{font-size:.86rem}.logo img{width:30px;height:30px}
+ .nav .btn-sm{padding:9px 11px;font-size:.78rem}
+ .chip.c1{left:-6%}.chip.c2{right:-6%}
+ .stat{padding:22px 10px}
+ .badge{font-size:.7rem;padding:7px 14px}
+}
+@media (prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ .rv{opacity:1;transform:none}
+ .marquee{overflow-x:auto}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<div id="progress" aria-hidden="true"></div>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<header class="nav" id="nav">
+ <div class="wrap">
+  <a href="#top" class="logo" aria-label="AI Vidéo Universe, retour en haut"><img src="assets/favicon.svg" alt="" width="34" height="34"><span>AI Vidéo <b>Universe</b></span></a>
+  <nav aria-label="Navigation principale"><ul>
+   <li><a href="#methode">La méthode</a></li><li><a href="#preuves">Exemples</a></li><li><a href="#programme">Programme</a></li><li><a href="#offre">Tarif</a></li><li><a href="#faq">FAQ</a></li>
+  </ul></nav>
+  <a class="btn btn-gold btn-sm" href="https://shop.ai-universe.fr/aivideouniverse/checkout">Rejoindre — 97 €</a>
+ </div>
+</header>
+
+<main id="main">
+<!-- HERO -->
+<section class="hero" id="top">
+ <div class="hero-bg" aria-hidden="true"><img src="assets/img/hero.jpg" alt="" fetchpriority="high"></div>
+ <div class="wrap">
+  <div class="hero-copy">
+   <span class="live rv"><span class="dot"></span>Offre de lancement — accès à vie 97 €</span>
+   <h1 class="rv" style="--d:.08s"><span class="line">Des pubs vidéo pro</span><span class="line grad">qui vendent.</span><span class="line">Sans caméra. Sans acteur. Sans agence.</span></h1>
+   <p class="lead rv" style="--d:.16s">E-commerçants, freelances, créateurs, et même grands débutants : suivez une méthode en 8 modules, pilotée par un skill IA exclusif qui écrit, storyboarde et génère votre pub en quelques minutes.</p>
+   <div class="hero-cta rv" style="--d:.24s">
+    <a class="btn btn-gold btn-lg" href="https://shop.ai-universe.fr/aivideouniverse/checkout">Accéder maintenant — 97 € <span aria-hidden="true">→</span></a>
+    <a class="btn btn-ghost btn-lg" href="#preuves">Voir les exemples</a>
+   </div>
+   <ul class="reassure rv" style="--d:.3s">
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Accès immédiat</li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Paiement sécurisé</li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Accès à vie</li>
+   </ul>
+  </div>
+  <div class="stage rv" style="--d:.2s">
+   <div class="halo" aria-hidden="true"></div>
+   <div class="phone"><div class="vid" data-yt="ggHdxZCCJ0w" data-title="Exemple de création" data-poster="assets/img/poster.jpg"></div></div>
+   <div class="chip c1" aria-hidden="true"><span class="ic">🎬</span><span>100 % généré par IA<small>Exemple de création</small></span></div>
+   <div class="chip c2" aria-hidden="true"><span class="ic">⚡</span><span>Personnage verrouillé<small>SEED LOCK</small></span></div>
+  </div>
+ </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" aria-label="L'essentiel en chiffres">
+ <div class="wrap"><div class="grid rv">
+  <div class="stat"><strong data-count="8">8</strong><span>modules complets</span></div>
+  <div class="stat"><strong><span data-count="97">97</span> €</strong><span>accès à vie</span></div>
+  <div class="stat"><strong>0</strong><span>caméra requise</span></div>
+  <div class="stat"><strong>∞</strong><span>vidéos possibles</span></div>
+ </div></div>
+</section>
+
+<!-- PROBLEM -->
+<section id="probleme">
+ <div class="wrap">
+  <div class="head"><span class="eyebrow rv">Le vrai problème</span><h2 class="rv">Faire une bonne pub vidéo ne devrait pas vous ruiner.</h2><p class="lead rv">Pourtant, aujourd'hui, c'est ce qui bloque la plupart des marques et des créateurs. Vous vous reconnaissez ?</p></div>
+  <div class="cards c4">
+   <article class="card pb rv"><span class="num">01</span><div class="ico" aria-hidden="true">💸</div><h3>Les agences coûtent une fortune</h3><p>500 à 3 000 € par vidéo. Pour un seul format. Et il faut tout repayer au prochain test.</p></article>
+   <article class="card pb rv" style="--d:.08s"><span class="num">02</span><div class="ico" aria-hidden="true">🎥</div><h3>Vous n'osez pas vous filmer</h3><p>La caméra intimide. Pas de studio, pas d'équipement. Alors la vidéo ne se fait jamais.</p></article>
+   <article class="card pb rv" style="--d:.16s"><span class="num">03</span><div class="ico" aria-hidden="true">🧩</div><h3>Les outils sont éparpillés</h3><p>Des dizaines d'IA, aucune méthode pour les assembler. Le rendu pro reste hors de portée.</p></article>
+   <article class="card pb rv" style="--d:.24s"><span class="num">04</span><div class="ico" aria-hidden="true">⏳</div><h3>Trop de temps, trop peu de résultats</h3><p>Des tests au hasard, un rendu amateur. Et des heures perdues que vous ne récupérerez pas.</p></article>
+  </div>
+  <p class="agit rv"><span aria-hidden="true" style="font-size:1.6rem">⚠️</span><span>Pendant ce temps, vos concurrents publient. <b>Chaque semaine sans vidéo, ce sont des ventes qui partent ailleurs.</b></span></p>
+ </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="brain" id="methode">
+ <div class="wrap">
+  <div>
+   <span class="eyebrow rv">La solution</span>
+   <h2 class="rv">Un cerveau IA fait le travail d'une agence entière.</h2>
+   <p class="lead rv" style="margin-top:18px">Au cœur de la formation : un skill d'automatisation IA exclusif. Vous lui donnez votre produit. Il pilote tout le pipeline, étape par étape.</p>
+   <ol class="pipeline rv">
+    <li>Analyse du produit<span class="t">Auto</span></li>
+    <li>Accroche qui arrête le scroll<span class="t">Auto</span></li>
+    <li>Storyboard scène par scène<span class="t">Auto</span></li>
+    <li>Prompts image et vidéo<span class="t">Auto</span></li>
+    <li>Script voix-off<span class="t">Auto</span></li>
+   </ol>
+  </div>
+  <div class="brain-core rv" style="--d:.1s">
+   <span class="tag">Exclusif</span>
+   <h3 style="font-size:1.5rem;margin-bottom:22px">Ce que ça change pour vous</h3>
+   <div class="benef">
+    <div class="card"><div class="ico" aria-hidden="true">⚡</div><h3>En quelques minutes</h3><p>Ce qui prenait des jours se produit maintenant en quelques minutes.</p></div>
+    <div class="card"><div class="ico" aria-hidden="true">🔁</div><h3>Reproductible à l'infini</h3><p>Changez de produit. Relancez. Une nouvelle pub est prête.</p></div>
+    <div class="card"><div class="ico" aria-hidden="true">🔒</div><h3>Zéro erreur de cohérence</h3><p>Personnage verrouillé, décor constant, CTA signature.</p></div>
+    <div class="card"><div class="ico" aria-hidden="true">🧭</div><h3>Guidé à chaque étape</h3><p>L'IA vous accompagne. Vous ne restez jamais bloqué.</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- PROOF -->
+<section id="preuves">
+ <div class="wrap">
+  <div class="head center"><span class="eyebrow rv">La preuve</span><h2 class="rv">Aucune caméra n'a été allumée pour ces vidéos.</h2><p class="lead rv">Activez le son. Regardez le résultat. Puis imaginez-le avec votre produit.</p></div>
+  <div class="vgrid">
+   <article class="vcard rv"><div class="vid" data-yt="deW8V0esE-o" data-title="Pub Disaur" data-poster="assets/img/avatar.jpg"></div><div class="cap"><b>Pub Disaur</b><span>Publicité produit</span></div></article>
+   <article class="vcard rv" style="--d:.08s"><div class="vid" data-yt="Q1fSmJB0Hzc" data-title="Vidéo Tuto" data-poster="assets/img/mockup.jpg"></div><div class="cap"><b>Vidéo Tuto</b><span>Format pédagogique</span></div></article>
+   <article class="vcard rv" style="--d:.16s"><div class="vid" data-yt="wOtebrzQGZk" data-title="Storytelling" data-poster="assets/img/combo.jpg"></div><div class="cap"><b>Storytelling</b><span>Récit de marque</span></div></article>
+  </div>
+ </div>
+</section>
+
+<!-- GALLERY -->
+<section id="galerie" style="padding-top:0">
+ <div class="wrap"><div class="head center"><span class="eyebrow rv">Galerie</span><h2 class="rv">Avatars, produits de luxe, mockups : tout sort de l'IA.</h2><p class="lead rv">Des visuels hyperréalistes que vous apprendrez à créer vous-même. Cliquez pour agrandir.</p></div></div>
+ <div class="marquee rv" aria-label="Galerie de créations IA"><div class="track" id="track"></div></div>
+ <p class="gal-note">Survolez pour mettre en pause.</p>
+</section>
+
+<!-- PROGRAM -->
+<section id="programme">
+ <div class="wrap">
+  <div class="head center"><span class="eyebrow rv">Le programme</span><h2 class="rv">8 modules pour passer de zéro à votre première pub vendue.</h2><p class="lead rv">Chaque module mène à un résultat concret. Dans l'ordre. Sans rien laisser au hasard.</p></div>
+  <div class="acc" id="modules"></div>
+ </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="avis">
+ <div class="wrap">
+  <div class="head center"><span class="eyebrow rv">Ils l'ont fait</span><h2 class="rv">Ils ont lancé leurs pubs. Voici ce qu'ils en disent.</h2></div>
+  <div class="tgrid">
+   <figure class="card tcard rv"><div class="stars" aria-label="5 étoiles">★★★★★</div><blockquote>Ma première pub pro en moins de 2 jours. Mes clients pensent que j'ai engagé une actrice.</blockquote><figcaption class="who"><span class="av" aria-hidden="true">A</span><span><b>Aminata M.</b><small>E-commerçante</small></span></figcaption></figure>
+   <figure class="card tcard rv" style="--d:.08s"><div class="stars" aria-label="5 étoiles">★★★★★</div><blockquote>Le verrouillage personnage change tout.</blockquote><figcaption class="who"><span class="av" aria-hidden="true">K</span><span><b>Kevin T.</b><small>Freelance vidéo</small></span></figcaption></figure>
+   <figure class="card tcard rv" style="--d:.16s"><div class="stars" aria-label="5 étoiles">★★★★★</div><blockquote>97 € pour des milliers d'euros économisés.</blockquote><figcaption class="who"><span class="av" aria-hidden="true">F</span><span><b>Fatou D.</b><small>Créatrice de contenu</small></span></figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer" id="offre">
+ <div class="wrap">
+  <div>
+   <span class="eyebrow rv">L'offre</span>
+   <h2 class="rv">Le prix d'une seule vidéo d'agence ? Non. Bien moins.</h2>
+   <p class="lead rv" style="margin-top:18px">Une agence facture 500 à 3 000 € pour une seule vidéo. Ici, vous payez 97 € une fois, et vous créez vos pubs vous-même, autant que vous voulez.</p>
+   <div class="anchor rv">
+    <div><s>500 – 3 000 €</s><small>une vidéo en agence</small></div>
+    <span class="vs">VS</span>
+    <div><strong>97 €</strong><small>la méthode complète, à vie</small></div>
+   </div>
+  </div>
+  <div class="price rv" style="--d:.1s">
+   <span class="badge">Offre de lancement</span>
+   <h3>AI Vidéo Universe</h3>
+   <div class="amount">97<sup>€</sup></div>
+   <p class="per">Paiement unique · accès à vie · mises à jour incluses</p>
+   <ul class="incl">
+    <li>Les 8 modules complets</li>
+    <li>Le système exclusif de verrouillage personnage</li>
+    <li>Des scripts voix professionnels</li>
+    <li>La checklist cohérence avant publication</li>
+    <li>Des templates de storyboard pour n'importe quel produit</li>
+    <li class="gift">L'eBook Prompt Mastery V2.0 offert</li>
+    <li>L'accès à la communauté Telegram privée</li>
+    <li>Toutes les mises à jour futures incluses</li>
+   </ul>
+   <a class="btn btn-gold btn-lg" href="https://shop.ai-universe.fr/aivideouniverse/checkout">Je rejoins AI Vidéo Universe — 97 € <span aria-hidden="true">→</span></a>
+   <ul class="reassure"><li>🔒 Paiement sécurisé</li><li>⚡ Accès immédiat</li><li>♾️ Accès à vie</li></ul>
+  </div>
+ </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+ <div class="wrap">
+  <div class="head center"><span class="eyebrow rv">Vos questions</span><h2 class="rv">Encore un doute ? Voici les réponses.</h2></div>
+  <div class="acc" id="faqlist"></div>
+  <p style="text-align:center;margin-top:40px" class="rv"><a class="btn btn-gold btn-lg" href="https://shop.ai-universe.fr/aivideouniverse/checkout">C'est clair, je m'inscris — 97 €</a></p>
+ </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+ <div class="wrap"><div class="box rv">
+  <img src="assets/img/hero.jpg" alt="" loading="lazy">
+  <span class="eyebrow">Dernière étape</span>
+  <h2>Votre prochaine pub peut être prête ce soir.</h2>
+  <p class="lead">Pas de caméra à acheter. Pas d'acteur à payer. Pas d'agence à attendre. Juste vous, l'IA et une méthode qui marche. Le tarif de lancement à 97 € est en cours : profitez-en tant qu'il est disponible.</p>
+  <a class="btn btn-gold btn-lg" href="https://shop.ai-universe.fr/aivideouniverse/checkout">Je commence maintenant — 97 € <span aria-hidden="true">→</span></a>
+  <ul class="reassure" style="margin-top:20px"><li>🔒 Paiement sécurisé</li><li>⚡ Accès immédiat</li><li>♾️ Accès à vie</li></ul>
+  <a class="tg" href="https://t.me/PromptEmpireCASH" target="_blank" rel="noopener">✈️ Découvrir la communauté Telegram</a>
+ </div></div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <span>© <span id="yr">2026</span> AI Vidéo Universe. Créé avec l'IA, pensé pour vendre.</span>
+  <nav aria-label="Liens du pied de page"><a href="#programme">Programme</a><a href="#faq">FAQ</a><a href="https://t.me/PromptEmpireCASH" target="_blank" rel="noopener">Telegram</a><a href="https://shop.ai-universe.fr/aivideouniverse/checkout">Rejoindre — 97 €</a></nav>
+ </div>
+</footer>
+
+<div class="mcta" id="mcta"><a class="btn btn-gold" href="https://shop.ai-universe.fr/aivideouniverse/checkout">Rejoindre maintenant — 97 € <span aria-hidden="true">→</span></a></div>
+
+<div class="lightbox" id="lb" role="dialog" aria-modal="true" aria-label="Aperçu de l'image">
+ <button class="lb-btn lb-close" id="lbClose" aria-label="Fermer">✕</button>
+ <button class="lb-btn lb-prev" id="lbPrev" aria-label="Image précédente">‹</button>
+ <figure><img id="lbImg" src="assets/img/avatar.jpg" alt=""><figcaption id="lbCap"></figcaption></figure>
+ <button class="lb-btn lb-next" id="lbNext" aria-label="Image suivante">›</button>
+</div>
+
+<script>
+(function(){
+"use strict";
+var PAY="https://shop.ai-universe.fr/aivideouniverse/checkout";
+var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+document.getElementById("yr").textContent=new Date().getFullYear();
+
+/* ---- Galerie ---- */
+var FALLBACK={"Avatar IA":"assets/img/avatar.jpg","Produit de luxe":"assets/img/luxe.jpg","Mockup":"assets/img/mockup.jpg","Combinaison":"assets/img/combo.jpg","Avatar habillé":"assets/img/habille.jpg"};
+var ALT={"Avatar IA":"Avatar UGC hyperréaliste généré par IA","Produit de luxe":"Packshot de produit de luxe généré par IA","Mockup":"Mockup produit réalisé avec l'IA","Combinaison":"Avatar IA présentant un produit","Avatar habillé":"Avatar IA habillé avec un vêtement e-commerce"};
+var G=[["Avatar IA",["1OW2_v585nkmjUD3qfG2u2NsjdN382dke","15RobvGXVlyspBUEtQpF1ltx_nRclX783","1v_vVwdrtRzkfRkz588lnkzLF6T_XifZ_","1DgWcACCibHZU_akA1H1XQ7urOSe6NCOG","1EkqJU54oVnDg6Qy-FmycxbV3XnOp2cEn"]],
+["Produit de luxe",["1j2oLb6FtlstnaXN9C68nIfBWtgQxLL4N","1Iaxea7hQn4haMnNwofBDiX6OeF18J5JL","12kQp1yPfLARc_bPJiE5D10NhE4G7p8xj","1HMjgOvnDFe9UUgU6YL5d3735C3UUpFGZ","1HfTkintbrCOh-nMDyl1vOwQqNQ4X7TPf"]],
+["Mockup",["1pd85t1ZMRoFp_NtMof7jX8nkY8dHvQ1q","1TGiYyPsVVEmU5TPqNVXz8vnj9DLfiJ45"]],
+["Combinaison",["10uIE5hV9I2TMZrPH8ZjW-7ksiYMHCD4E"]],
+["Avatar habillé",["1YOOC_0h5ckjk3qzF6ojwI66xTpp8bxV0","196PNOC2G-m_wWoRKqqj6BaMKLeTEygdl","1xSVvwScv8MM2YquZIaDXDRExcm-al5UK"]]];
+/* interleave categories for variety */
+var items=[],max=5;
+for(var i=0;i<max;i++)G.forEach(function(g){if(g[1][i])items.push({cat:g[0],id:g[1][i]});});
+var track=document.getElementById("track");
+function makeShot(it,idx,clone){
+ var f=document.createElement("figure");f.className="shot";
+ var b=document.createElement("button");b.type="button";b.style.cssText="display:block;width:100%;height:100%";
+ b.setAttribute("aria-label","Agrandir : "+it.cat);
+ if(clone){b.tabIndex=-1;f.setAttribute("aria-hidden","true");}
+ var im=new Image();im.loading="lazy";im.decoding="async";im.alt=ALT[it.cat];im.width=260;im.height=347;
+ im.referrerPolicy="no-referrer";
+ im.onerror=function(){if(im.dataset.fb)return;im.dataset.fb=1;im.src=FALLBACK[it.cat];it.fb=true;};
+ im.onload=function(){if(im.naturalWidth<20&&!im.dataset.fb){im.onerror();}};
+ im.src=it.fb?FALLBACK[it.cat]:"https://drive.google.com/thumbnail?id="+it.id+"&sz=w800";
+ b.appendChild(im);f.appendChild(b);
+ var c=document.createElement("figcaption");c.textContent=it.cat;f.appendChild(c);
+ b.addEventListener("click",function(){openLb(idx);});
+ return f;
+}
+items.forEach(function(it,i){track.appendChild(makeShot(it,i,false));});
+items.forEach(function(it,i){track.appendChild(makeShot(it,i,true));});
+
+/* Lightbox */
+var lb=document.getElementById("lb"),lbImg=document.getElementById("lbImg"),lbCap=document.getElementById("lbCap"),cur=0,lastFocus=null;
+function srcOf(i){var im=track.children[i].querySelector("img");return im.currentSrc||im.src;}
+function show(i){cur=(i+items.length)%items.length;lbImg.onerror=function(){lbImg.onerror=null;lbImg.src=FALLBACK[items[cur].cat];};lbImg.src=srcOf(cur);lbImg.alt=ALT[items[cur].cat];lbCap.textContent=items[cur].cat+" · "+(cur+1)+" / "+items.length;}
+function openLb(i){lastFocus=document.activeElement;show(i);lb.classList.add("open");document.body.style.overflow="hidden";document.getElementById("lbClose").focus();}
+function closeLb(){lb.classList.remove("open");document.body.style.overflow="";if(lastFocus)lastFocus.focus();}
+document.getElementById("lbClose").onclick=closeLb;
+document.getElementById("lbPrev").onclick=function(){show(cur-1);};
+document.getElementById("lbNext").onclick=function(){show(cur+1);};
+lb.addEventListener("click",function(e){if(e.target===lb)closeLb();});
+document.addEventListener("keydown",function(e){if(!lb.classList.contains("open"))return;if(e.key==="Escape")closeLb();if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1);});
+
+/* ---- Accordéons ---- */
+var MOD=[["00","Bienvenue","Découvrez la structure de la formation, installez le skill IA et préparez vos outils. <b>Résultat : tout est prêt pour créer.</b>"],
+["01","Construire votre idée publicitaire","Identifiez les douleurs et les désirs de vos clients, choisissez l'angle émotionnel, remplissez votre fiche stratégique et écrivez une accroche qui arrête le scroll."],
+["02","Générer des images hyperréalistes","Créez votre personnage virtuel une seule fois, verrouillez-le grâce au <b>SEED LOCK</b> et construisez sa bible personnage. Il reste identique dans chaque scène."],
+["03","Générer des vidéos hyperréalistes","Rédigez vos prompts vidéo scène par scène pour une continuité parfaite. Maîtrisez les formats qui vendent : avant/après, démo produit, lifestyle."],
+["04","Générer des voix-off personnalisées","Écrivez un script parlé mot pour mot, avec ses pauses et ses accélérations. Obtenez une voix naturelle et persuasive."],
+["05","Réaliser le montage de vidéos UGC","Assemblez vos scènes, synchronisez la voix-off, ajoutez transitions et sous-titres dynamiques. Trouvez le rythme qui retient l'attention."],
+["06","Projet UGC de A à Z","Réalisez un projet complet de bout en bout, avec le CTA signature qui révèle la nature IA du personnage, et validez tout avec la checklist."],
+["07","Monétiser cette compétence","Proposez vos services aux marques, fixez vos tarifs et trouvez vos premiers clients. <b>Votre formation peut devenir une source de revenus.</b>"]];
+var FAQ=[["Faut-il une caméra ou du matériel ?","Non. Tout est généré par l'IA : images, vidéos et voix. Un ordinateur et une connexion internet suffisent."],
+["Les outils sont-ils gratuits ou payants ?","Vous pouvez débuter avec les versions gratuites. Pour produire en volume, des abonnements abordables sont disponibles."],
+["Je suis débutant complet. Est-ce pour moi ?","Oui. La formation part de zéro et le skill IA vous guide à chaque étape."],
+["Puis-je utiliser ces vidéos pour mes clients ?","Oui. Vous pouvez créer des pubs pour vos propres produits comme pour vos clients. Le module 07 vous montre comment vendre ce service."],
+["L'accès est-il vraiment à vie ?","Oui. Un seul paiement de 97 €, un accès à vie, et les mises à jour futures sont incluses."],
+["Comment rejoindre la communauté ?","Vous recevez le lien de la communauté Telegram privée juste après votre achat."]];
+function acc(el,data,faq){data.forEach(function(d,i){var det=document.createElement("details");det.className="rv";det.style.setProperty("--d",(i*.05)+"s");
+ det.innerHTML='<summary>'+(faq?'':'<span class="n">'+d[0]+'</span>')+'<span>'+(faq?d[0]:d[1])+'</span><span class="pm" aria-hidden="true"></span></summary><div class="body"><p>'+(faq?d[1]:d[2])+'</p></div>';
+ if(!faq&&i===0)det.open=true;el.appendChild(det);});}
+acc(document.getElementById("modules"),MOD,false);
+acc(document.getElementById("faqlist"),FAQ,true);
+/* Only one open at a time per list */
+document.querySelectorAll(".acc").forEach(function(list){list.addEventListener("toggle",function(e){if(e.target.open)list.querySelectorAll("details[open]").forEach(function(d){if(d!==e.target)d.open=false;});},true);});
+
+/* ---- Vidéos YouTube ---- */
+var PLAY='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+var MUTED='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4z"/><path d="M23 9l-6 6M17 9l6 6"/></svg>';
+var ON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 010 7M19 5a10 10 0 010 14"/></svg>';
+function embed(id){return "https://www.youtube.com/embed/"+id+"?autoplay=1&mute=1&loop=1&controls=0&playlist="+id+"&rel=0&enablejsapi=1&playsinline=1&modestbranding=1";}
+function cmd(ifr,f,args){try{ifr.contentWindow.postMessage(JSON.stringify({event:"command",func:f,args:args||[]}),"*");}catch(e){}}
+var videos=[].slice.call(document.querySelectorAll(".vid[data-yt]"));
+videos.forEach(function(v){
+ var id=v.dataset.yt,title=v.dataset.title;
+ v.innerHTML='<div class="poster"><img src="'+v.dataset.poster+'" alt="Aperçu de la vidéo '+title+'" loading="lazy"><a class="play" href="https://www.youtube.com/watch?v='+id+'" target="_blank" rel="noopener" aria-label="Lire la vidéo '+title+' sur YouTube">'+PLAY+'</a></div>';
+});
+function load(v){
+ if(v.dataset.loaded)return;v.dataset.loaded=1;
+ var id=v.dataset.yt,title=v.dataset.title;
+ var ifr=document.createElement("iframe");
+ ifr.title="Vidéo : "+title;ifr.allow="autoplay; encrypted-media; picture-in-picture";ifr.loading="lazy";ifr.referrerPolicy="strict-origin-when-cross-origin";
+ var ok=false;
+ ifr.addEventListener("load",function(){ok=true;setTimeout(function(){v.classList.add("ready");},700);cmd(ifr,"playVideo");});
+ ifr.src=embed(id);v.appendChild(ifr);
+ var btn=document.createElement("button");btn.type="button";btn.className="sound";btn.setAttribute("aria-pressed","false");
+ btn.innerHTML=MUTED+"<span>Activer le son</span>";
+ btn.addEventListener("click",function(){
+  var on=btn.getAttribute("aria-pressed")!=="true";
+  if(on){videos.forEach(function(o){var b=o.querySelector(".sound"),f=o.querySelector("iframe");if(b&&b!==btn&&b.getAttribute("aria-pressed")==="true"){cmd(f,"mute");b.setAttribute("aria-pressed","false");b.innerHTML=MUTED+"<span>Activer le son</span>";}});
+   cmd(ifr,"unMute");cmd(ifr,"setVolume",[100]);cmd(ifr,"playVideo");v.classList.add("ready");}
+  else cmd(ifr,"mute");
+  btn.setAttribute("aria-pressed",on?"true":"false");
+  btn.innerHTML=(on?ON:MUTED)+"<span>"+(on?"Couper le son":"Activer le son")+"</span>";
+ });
+ v.appendChild(btn);
+ /* fallback élégant si YouTube ne répond pas */
+ setTimeout(function(){if(!ok){ifr.remove();btn.remove();v.classList.remove("ready");}},12000);
+}
+if("IntersectionObserver" in window){
+ var vo=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){load(e.target);vo.unobserve(e.target);}});},{rootMargin:"200px"});
+ videos.forEach(function(v){vo.observe(v);});
+}else videos.forEach(load);
+
+/* ---- Reveal ---- */
+var rvs=document.querySelectorAll(".rv");
+if(reduce||!("IntersectionObserver" in window)){rvs.forEach(function(e){e.classList.add("in");});}
+else{var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");ro.unobserve(e.target);}});},{threshold:.12,rootMargin:"0px 0px -40px 0px"});
+ document.querySelectorAll(".rv").forEach(function(e){ro.observe(e);});
+ /* details ajoutés dynamiquement */
+ document.querySelectorAll(".acc .rv").forEach(function(e){ro.observe(e);});}
+
+/* ---- Compteurs ---- */
+document.querySelectorAll("[data-count]").forEach(function(el){
+ var end=+el.dataset.count;if(reduce)return;el.textContent="0";
+ var io=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;io.disconnect();var t0=performance.now();
+  (function step(t){var p=Math.min((t-t0)/1400,1);el.textContent=Math.round(end*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);})(t0);},{threshold:.5});
+ io.observe(el);});
+
+/* ---- Scroll : nav, progress, CTA mobile, parallaxe ---- */
+var nav=document.getElementById("nav"),bar=document.getElementById("progress"),m=document.getElementById("mcta"),hb=document.querySelector(".hero-bg img"),ticking=false;
+var offer=document.getElementById("offre");
+function onScroll(){var y=window.scrollY,h=document.documentElement.scrollHeight-innerHeight;
+ nav.classList.toggle("scrolled",y>20);bar.style.transform="scaleX("+(h>0?y/h:0)+")";
+ var r=offer.getBoundingClientRect(),inOffer=r.top<innerHeight&&r.bottom>0;
+ var nearEnd=y>h-700;
+ m.classList.toggle("show",y>innerHeight*.8&&!inOffer&&!nearEnd);
+ if(!reduce&&hb&&y<innerHeight)hb.style.transform="translate3d(0,"+(y*.25)+"px,0) scale(1.08)";
+ ticking=false;}
+addEventListener("scroll",function(){if(!ticking){requestAnimationFrame(onScroll);ticking=true;}},{passive:true});onScroll();
+
+/* ---- Tilt 3D des cartes (desktop) ---- */
+if(!reduce&&matchMedia("(hover:hover) and (pointer:fine)").matches){
+ document.querySelectorAll(".card").forEach(function(c){
+  c.addEventListener("mousemove",function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+   c.style.transform="translateY(-8px) rotateX("+(-y*6)+"deg) rotateY("+(x*6)+"deg)";});
+  c.addEventListener("mouseleave",function(){c.style.transform="";});});
+}
+/* sécurité : tous les CTA vers le paiement, même onglet */
+document.querySelectorAll('a[href="'+PAY+'"]').forEach(function(a){a.removeAttribute("target");});
+})();
+</script>
+</body>
+</html>
